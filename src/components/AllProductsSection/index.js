@@ -121,7 +121,7 @@ class AllProductsSection extends Component {
     this.setState({ratingId: id})
   }
 
-  input = n => {
+  inputChange = n => {
     this.setState({input: n})
   }
 
@@ -168,7 +168,7 @@ class AllProductsSection extends Component {
           ratingsList={ratingsList}
           ratingBtn={this.ratingBtn}
           categoryBtn={this.categoryBtn}
-          input={this.input}
+          input={this.inputChange}
         />
 
         {isLoading ? this.renderLoader() : this.renderProductsList()}

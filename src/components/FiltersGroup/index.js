@@ -2,11 +2,11 @@ import './index.css'
 
 const FiltersGroup = props => {
   const {ratingsList, categoryOptions, categoryBtn, ratingBtn, input} = props
-  const category = id => {
-    categoryBtn(id)
+  const category = categoryId => {
+    categoryBtn(categoryId)
   }
-  const rating = id => {
-    ratingBtn(id)
+  const rating = ratingId => {
+    ratingBtn(ratingId)
   }
   const changeInput = event => {
     input(event.target.value)

@@ -113,21 +113,13 @@ class AllProductsSection extends Component {
     }
   }
 
-  categoryBtn = id => {
-    this.setState({categoryId: id})
-  }
+  categoryBtn = id => this.setState({categoryId: id}, this.getProducts)
 
-  ratingBtn = id => {
-    this.setState({ratingId: id})
-  }
+  ratingBtn = id => this.setState({ratingId: id}, this.getProducts)
 
-  inputChange = n => {
-    this.setState({input: n})
-  }
+  inputChange = n => this.setState({input: n})
 
-  changeSortby = activeOptionId => {
-    this.setState({activeOptionId}, this.getProducts)
-  }
+  changeSortby = activeOptionId => this.setState({activeOptionId})
 
   renderProductsList = () => {
     const {productsList, activeOptionId} = this.state

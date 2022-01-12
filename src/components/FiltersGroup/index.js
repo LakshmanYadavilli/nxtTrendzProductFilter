@@ -1,10 +1,12 @@
+import CategoryList from '../CategoryList'
+import RatingList from '../RatingList'
 import './index.css'
 
 const FiltersGroup = props => {
   const {ratingsList, categoryOptions, categoryBtn, ratingBtn, input} = props
-  const category = categoryId => categoryBtn(categoryId)
+  const changeCategoryId = categoryId => categoryBtn(categoryId)
 
-  const rating = ratingId => ratingBtn(ratingId)
+  const changeRatingId = ratingId => ratingBtn(ratingId)
 
   const changeInput = event => input(event.target.value)
 
@@ -14,20 +16,20 @@ const FiltersGroup = props => {
       <input type="search" onChange={changeInput} />
       <ul>
         {categoryOptions.map(n => (
-          <li key={n.categoryId}>
-            <button type="button" onClick={category(n.categoryId)}>
-              {n.name}
-            </button>
-          </li>
+          <CategoryList
+            key={n.categoryId}
+            data={n}
+            changeCategoryId={changeCategoryId}
+          />
         ))}
       </ul>
       <ul>
         {ratingsList.map(m => (
-          <li key={m.ratingId}>
-            <button type="button" onClick={rating(m.ratingId)}>
-              <img className="img" src={m.imageUrl} alt="rating" />
-            </button>
-          </li>
+          <RatingList
+            key={m.ratingId}
+            data={m}
+            changeRatingId={changeRatingId}
+          />
         ))}
       </ul>
     </div>

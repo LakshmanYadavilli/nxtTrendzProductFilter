@@ -6,11 +6,12 @@ const RatingList = props => {
   const rating = () => {
     changeRatingId(ratingId)
   }
+  const altR = `rating ${ratingId}`
 
   return (
     <li>
       <button type="button" onClick={rating}>
-        <img className="img" src={imageUrl} alt="rating" />
+        <img className="img" src={imageUrl} alt={altR} />
       </button>
     </li>
   )

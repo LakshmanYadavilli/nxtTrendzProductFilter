@@ -121,6 +121,9 @@ class AllProductsSection extends Component {
 
   changeSortby = activeOptionId => this.setState({activeOptionId})
 
+  clearAll = () =>
+    this.setState({input: '', ratingId: '', categoryId: ''}, this.getProducts)
+
   renderProductsList = () => {
     const {productsList, activeOptionId} = this.state
 
@@ -161,6 +164,7 @@ class AllProductsSection extends Component {
           ratingBtn={this.ratingBtn}
           categoryBtn={this.categoryBtn}
           input={this.inputChange}
+          clearAll={this.clearAll}
         />
 
         {isLoading ? this.renderLoader() : this.renderProductsList()}

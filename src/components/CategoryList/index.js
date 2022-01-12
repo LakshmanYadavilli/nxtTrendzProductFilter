@@ -11,7 +11,7 @@ const CategoryList = props => {
   return (
     <li>
       <button type="button" onClick={category}>
-        {name}
+        <p>{name}</p>
       </button>
     </li>
   )

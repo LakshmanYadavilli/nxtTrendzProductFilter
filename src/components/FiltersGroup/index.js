@@ -3,12 +3,23 @@ import RatingList from '../RatingList'
 import './index.css'
 
 const FiltersGroup = props => {
-  const {ratingsList, categoryOptions, categoryBtn, ratingBtn, input} = props
+  const {
+    ratingsList,
+    categoryOptions,
+    categoryBtn,
+    ratingBtn,
+    input,
+    clearAll,
+  } = props
   const changeCategoryId = categoryId => categoryBtn(categoryId)
 
   const changeRatingId = ratingId => ratingBtn(ratingId)
 
   const changeInput = event => input(event.target.value)
+
+  const clear = () => {
+    clearAll()
+  }
 
   return (
     <div className="filters-group-container">
@@ -32,6 +43,9 @@ const FiltersGroup = props => {
           />
         ))}
       </ul>
+      <button type="button" onClick={clear}>
+        Clear Filters
+      </button>
     </div>
   )
 }
